@@ -14,7 +14,6 @@ export default async function Home() {
 
   const user = await currentUser();
 
-  console.log(result.posts.length === 0);
 
   return (
     <>
