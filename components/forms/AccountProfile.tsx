@@ -53,7 +53,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     }
   })
 
-  const handleImage = (e:ChangeEvent<HTMLInputElement>, fieldChange: (value:string) => void) => {
+  const handleImage = (e: ChangeEvent<HTMLInputElement>, fieldChange: (value: string) => void) => {
     e.preventDefault()
 
     const fileReader = new FileReader();
@@ -108,7 +108,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col justify-start gap-10"
+        className="mt-10 flex flex-col justify-start gap-10"
       >
         {/* Image Form Field */}
         <FormField
@@ -127,7 +127,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                     className='rounded-fill object-contain'
                   />
                 ) : (
-                    <Image
+                  <Image
                     src='/assets/profile.svg'
                     alt='profile photo'
                     width={24}
@@ -142,10 +142,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                   accept='image/*'
                   placeholder='Upload a photo'
                   className='account-form_image-input'
-                  onChange={(e)=> handleImage(e,field.onChange)}
+                  onChange={(e) => handleImage(e, field.onChange)}
                 />
               </FormControl>
-              <FormMessage/>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -162,11 +162,11 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
               <FormControl>
                 <Input
                   type='text'
-                  className='account-form_input np-focus'
+                  className='account-form_input no-focus'
                   {...field}
                 />
               </FormControl>
-              <FormMessage/>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -182,15 +182,15 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
               <FormControl>
                 <Input
                   type='text'
-                  className='account-form_input np-focus'
+                  className='account-form_input no-focus'
                   {...field}
                 />
               </FormControl>
-              <FormMessage/>
+              <FormMessage />
             </FormItem>
           )}
         />
-        
+
         {/* Bio Form Field */}
         <FormField
           control={form.control}
@@ -203,11 +203,11 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
               <FormControl>
                 <Textarea
                   rows={10}
-                  className='account-form_input np-focus'
+                  className='account-form_input no-focus'
                   {...field}
                 />
               </FormControl>
-              <FormMessage/>
+              <FormMessage />
             </FormItem>
           )}
         />
