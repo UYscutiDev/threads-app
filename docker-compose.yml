@@ -1,22 +1,13 @@
-version: '3.8'
+version: '3.5'
 
 services:
-  nextjs-app:
-    image: node:14-alpine
-    working_dir: /app
-    environment:
-      NODE_ENV: production
-    volumes:
-      - ./app:/app
-    command: ['npm', 'run', 'start']
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-next
     ports:
       - '3000:3000'
-    depends_on:
-      - nextjs-app-build
-
-  nextjs-app-build:
-    image: node:14-alpine
-    working_dir: /app
     volumes:
-      - ./app:/app
-    command: ['npm', 'run', 'build']
+      - .:/app
+      - /app/node_modules
